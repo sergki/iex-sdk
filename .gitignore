@@ -1,0 +1,7 @@
+node_modules
+__test__/.env
+/lib
+.env
+.idea
+.vscode
+.DS_Store

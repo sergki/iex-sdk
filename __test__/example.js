@@ -16,10 +16,10 @@ iex.market()
 .then(res => console.log(res))
 
 iex
-  .symbols("AAPL", "GOOGL")
+  .batchSymbols(["AAPL", "GOOGL"])
   .book()
-  .then(res => console.log(res))
-  .catch(err => console.log(err));
+  .then(res => console.log('1 ok:',res))
+  .catch(err => console.log('1 err:',err));
 
 iex
   .symbol("aapl")
@@ -57,14 +57,14 @@ iex
   .catch(err => console.log(err));
 
 iex
-  .symbols("USDGPB", "USDJPY")
+  .batchSymbols(["USDGPB", "USDJPY"])
   .forex()
   .convert({ amount: 2000 })
   .then(res => console.log(res))
   .catch(err => console.log(err));
 
 iex
-  .symbols("USDGPB", "USDJPY")
+  .batchSymbols(["USDGPB", "USDJPY"])
   .forex()
   .historical({ last: 5 })
   .then(res => console.log(res))

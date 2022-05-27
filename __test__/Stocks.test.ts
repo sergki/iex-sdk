@@ -89,7 +89,7 @@ test("Batch Request and Symbols", () => {
 
 test("Batch Symbols Ceo Compensation", () => {
   return iex
-    .symbols("googl, amzn, fb")
+    .batchSymbols("googl, amzn, fb")
     .ceoCompensation()
     .then(res => expect(res).toHaveProperty("GOOGL"));
 });
@@ -125,7 +125,7 @@ test("Time Series Advanced Dividends", () => {
 
 test("Forex Latest", () => {
   return iex
-    .symbols("USDGPB", "USDJPY")
+    .batchSymbols("USDGPB", "USDJPY")
     .forex()
     .latest()
     .then(res => expect(Array.isArray(res)).toBe(true));
@@ -133,7 +133,7 @@ test("Forex Latest", () => {
 
 test("Forex Historical", () => {
   return iex
-    .symbols("USDGPB", "USDJPY")
+    .batchSymbols("USDGPB", "USDJPY")
     .forex()
     .historical({ last: 5 })
     .then(res => expect(Array.isArray(res)).toBe(true));
